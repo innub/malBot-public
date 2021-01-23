@@ -1,13 +1,12 @@
 const config = require("./config.json");
 const Discord = require("discord.js");
 var client = new Discord.Client();
-const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-const xhr = new XMLHttpRequest();
+
 const fetch = require("node-fetch");
 // other js files
 const fetchAPI = require("./fetchAPI");
 const embedBuilder = require("./embedBuilder");
-// prefix
+
 const pfx = ".";
 
 // used throughout
@@ -139,17 +138,10 @@ client.on("message", (message) => {
   }
 });
 
-// process.on("unhandledRejection", (error) => {
-//   console.log("unhandledRejection:", error.message);
-// });
-
 client.on("ready", () => {
-  // client.user.setUsername("weeb");
-  //client.user.setAvatar("https://i.imgur.com/JulDTDM.jpg");
   client.user.setPresence({
     activity: { name: "with body pillows" },
     status: "online",
   });
-  //client.user.tag("0000");
 });
 client.login(config.token);
